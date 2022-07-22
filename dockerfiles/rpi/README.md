@@ -1,9 +1,9 @@
-# raspberrypi 
+# rpi 
 
 ### rpi base raspbian/stretch
 
 ### Container execute 
-docker run -d -it --name rpi -v /Users/lune/Documents/GitHub/raspberrypi:/app impelfin/rpi 
+docker run -d -it --name rpi -v /Users/lune/Documents/GitHub/raspberrypi:/app rpi 
 
 ### Container shell connection 
 docker exec -it rpi /bin/bash
