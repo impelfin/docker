@@ -1,5 +1,5 @@
 # Step1 : base images
-FROM ubuntu:latest
+FROM node:14.16.1
 
 # Step2 : package install 
 RUN apt -y update && apt -y upgrade && apt -y install git net-tools vim
@@ -8,7 +8,7 @@ RUN apt -y update && apt -y upgrade && apt -y install git net-tools vim
 WORKDIR '/root'
 
 # Step4 : config file copy
-RUN git clone http://github.com/impelfin/UNIX
-RUN cp UNIX/ubuntu/.exrc .
-RUN cp UNIX/ubuntu/.bashrc .
-RUN rm -rf UNIX
+RUN git clone http://github.com/impelfin/docker
+RUN cp docker/dockerfiles/nodejs/.exrc .
+RUN cp docker/dockerfiles/nodejs/.bashrc .
+RUN rm -rf docker 
