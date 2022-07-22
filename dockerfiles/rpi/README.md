@@ -3,7 +3,7 @@
 ### rpi base raspbian/stretch
 
 ### Container execute 
-docker run -d -it --name rpi -v /Users/lune/Documents/GitHub/raspberrypi:/app rpi 
+docker run -d -it --name rpi -v /Users/lune/Documents/GitHub/docker/dockerfiles/rpi:/app rpi 
 
 ### Container shell connection 
 docker exec -it rpi /bin/bash
