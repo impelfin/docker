@@ -1,16 +1,16 @@
 # Step1 : base images
 FROM python
 
-# Step2 : Copy files 
+# Step2 : Copy files
 RUN mkdir /app
 COPY main.py /app
 COPY requirements.txt /app
 
-# Step3 : Specify a working directory 
+# Step3 : Specify a working directory
 WORKDIR '/app'
 
 # Step4 : config file copy
-RUN pip install -r requirements.txt 
+RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
