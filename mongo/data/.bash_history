@@ -54,3 +54,21 @@ ls
 pwd
 ls -a
 exit
+ls
+pwd
+cd
+pwd
+exit
+pwd
+ls
+ls -a
+cd /
+ls -a
+ls /root
+ls -a
+cd /root
+ls -al
+cat .bashrc
+c
+clear
+exit
