@@ -1,2 +1,3 @@
 # mongodb data directory
-**/data/
+mongo/data/
+mysql/db/
