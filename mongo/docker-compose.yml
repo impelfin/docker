@@ -1,14 +1,14 @@
 version: "3.7"
-
 services:
   db:
     image: mongo
     ports:
       - 27017:27017
     volumes:
-      - /Users/lune/Documents/GitHub/docker/mongo:/db
+      - .:/app
+      - ./data:/data/db
     environment:
-      TZ: Asia/Seoul
+      - TZ: Asia/Seoul
     networks:
       - backend
     restart: always

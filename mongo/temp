@@ -1,0 +1,47 @@
+version: "3.7"
+services:
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - /Users/lune/Documents/GitHub/docker/mongo:/app
+    environment:
+      - TZ: Asia/Seoul
+    networks:
+      - backend
+    restart: always
+
+networks:
+  backend:
+
+
+  version: "3.7"
+  services:
+    db:
+      image: mongo
+      ports:
+        - 27017:27017
+      volumes:
+        - .:/app
+        - ./data:/data/db
+      environment:
+        - TZ:Asia/Seoul
+        - MONGO_INITDB_ROOT_USERNAME:mongo
+        - MONGO_INITDB_ROOT_PASSWORD:mongo
+      restart: always
+
+    express:
+      image: mongo-express
+      ports:
+        - 8080:8080
+      environment:
+        - ME_CONFIG_MONGODB_SERVER:db           # mongodb 컨테이너 이름
+        - ME_CONFIG_MONGODB_PORT:27017          # mongodb 연결 포트
+        - ME_CONFIG_MONGODB_ADMINUSERNAME:mongo # mongodb 컨테이너의 root 계정
+        - ME_CONFIG_MONGODB_ADMINPASSWORD:mongo # mongodb 컨테이너의 root 비밀번호
+        - ME_CONFIG_BASICAUTH_USERNAME:mongo    # mongo-express 사용자 계정
+        - ME_CONFIG_BASICAUTH_PASSWORD:mongo    # mongo-express 사용자 비밀번호
+        - ME_CONFIG_MONGODB_ENABLE_ADMIN:true   # 모든 데이터베이스 관리자 권한으로 연결 (기본값 true)
+      depends_on:
+        - db
