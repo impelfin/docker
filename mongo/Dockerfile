@@ -9,5 +9,5 @@ WORKDIR '/root'
 
 # Step3 : Copy mongod.conf file
 COPY ./db/mongod.conf /etc/mongod.conf
-COPY .bashrc .
-COPY .exec .
+COPY ./.bashrc .
+COPY ./.exec .
