@@ -8,7 +8,7 @@ services:
       - .:/app
       - ./data:/data/db
     environment:
-      - TZ: Asia/Seoul
+      TZ: Asia/Seoul
     networks:
       - backend
     restart: always
