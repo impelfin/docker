@@ -2,12 +2,11 @@ version: "3.7"
 
 services:
   db:
-    image: mongodb 
+    image: mongo
     ports:
       - 27017:27017
     volumes:
-      - ./db/mongod.conf:/etc/mongod.conf
-#    env_file: .env
+      - /Users/lune/Documents/GitHub/docker/mongo:/db
     environment:
       TZ: Asia/Seoul
     networks:
