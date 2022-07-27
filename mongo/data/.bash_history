@@ -37,3 +37,20 @@ cd
 pwd
 ls
 exit
+ls
+ls -a
+cd
+ls -al
+cd /
+ls
+ls -a
+cd /root
+ls -a
+cd
+ls
+ps
+cd
+ls
+pwd
+ls -a
+exit
