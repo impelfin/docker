@@ -31,3 +31,9 @@ clear
 pwd
 ls -a
 exit
+ls
+pwd
+cd
+pwd
+ls
+exit
