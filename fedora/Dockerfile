@@ -8,7 +8,5 @@ RUN yum -y update && yum -y install git net-tools vim
 WORKDIR '/root'
 
 # Step4 : Config file copy
-RUN git clone http://github.com/impelfin/docker
-RUN cp docker/fedora/.exrc .
-RUN cp docker/fedora/.bashrc .
-RUN rm -rf docker
+COPY ./.bashrc .
+COPY ./.exrc .
