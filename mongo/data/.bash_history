@@ -72,3 +72,5 @@ cat .bashrc
 c
 clear
 exit
+ls
+exit
