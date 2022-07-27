@@ -1,4 +1,4 @@
-# Step1 : base images
+# Step1 : Base images
 FROM python
 
 # Step2 : Copy files
@@ -10,7 +10,7 @@ COPY login_form.html /app
 # Step3 : Specify a working directory
 WORKDIR '/app'
 
-# Step4 : config file copy
+# Step4 : Config file copy
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
