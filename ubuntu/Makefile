@@ -1,10 +1,14 @@
 build:
-	docker build -t ubuntu .
-run : 
-	docker run -d -it --name ubuntu -p 8000:8000 -v /Users/lune/Documents/GitHub/docker/ubuntu:/app ubuntu
-exec :
-	docker exec -it ubuntu /bin/bash
-ps :
+	docker build -t ubuntu:x .
+run:
+	docker run -it -d -p 8000:80 --name ubuntu ubuntu:x 
+exec:
+	docker exec -it ubuntu /bin/bash 
+ps:
 	docker ps -a
-img :
+img:
 	docker images
+rm:
+	docker rm -f $$(docker ps -aq)
+rmi:
+	docker rmi $$(docker images -q)

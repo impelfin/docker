@@ -1,2 +1,2 @@
-# Step1 : Base images
+# step 1 : Base Images
 FROM mysql

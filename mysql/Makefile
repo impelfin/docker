@@ -1,12 +1,16 @@
 build:
 	docker build -t mysql .
-run :
-	docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -v /Users/lune/Documents/GitHub/docker/mysql:/app --name=mysql mysql
-exec :
+run:
+	docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -v /var/run/mysqld:/var/run/mysqld -v /Users/Lune/Documents/GitHub/mysql:/app --name mysql mysql
+exec:
 	docker exec -it mysql /bin/bash
-db1 :
-	docker exec -it mysql-db-1 /bin/bash
-ps :
+logs:
+	docker logs mysql
+ps:
 	docker ps -a
-img :
+img:
 	docker images
+rm:
+	docker rm -f $$(docker ps -aq)
+rmi:
+	docker rmi $$(docker images -q)

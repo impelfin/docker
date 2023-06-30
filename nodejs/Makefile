@@ -1,10 +1,16 @@
 build:
-	docker build -t node .
-run : 
-	docker run -d -it --name node -p 3000:3000 -v /Users/lune/Documents/GitHub/nodejs:/app node
-exec :
-	docker exec -it node /bin/bash
-ps :
+	docker build -t nodejs .
+run:
+	docker run -it -d -p 8000:8000 -v /User/impelfin/Document/GitHub/nodejs:/app --name nodejs nodejs
+exec:
+	docker exec -it nodejs /bin/bash
+logs:
+	docker logs nodejs
+ps:
 	docker ps -a
-img :
+img:
 	docker images
+rm:
+	docker rm -f $$(docker ps -aq)
+rmi:
+	docker rmi $$(docker images -q)

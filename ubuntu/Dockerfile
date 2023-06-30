@@ -1,12 +1,11 @@
-# Step1 : Base images
-FROM ubuntu:latest
+# Step1 : Base Images
+FROM ubuntu
 
-# Step2 : Package install
-RUN apt -y update && apt -y upgrade && apt -y install git net-tools vim
+# Step2 : Install Program 
+RUN apt -y update && apt -y install -q nginx && apt -y install vim
 
-# Step3 : Specify a working directory
-WORKDIR '/root'
+# Step3 : File Copy 
+COPY index.html /var/www/html
 
-# Step4 : Config file copy
-COPY ./.bashrc .
-COPY ./.exrc .
+# Step4 : Start NGINX 
+CMD ["nginx","-g","daemon off;"]

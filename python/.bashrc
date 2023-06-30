@@ -6,7 +6,7 @@
 # umask 022
 
 # You may uncomment the following lines if you want `ls' to be colorized:
-# export LS_OPTIONS='--color=auto'
+# export LS_OPTIONS='—color=auto'
 # eval "$(dircolors)"
 # alias ls='ls $LS_OPTIONS'
 # alias ll='ls $LS_OPTIONS -l'
@@ -19,10 +19,11 @@
 alias c='clear'
 alias h='history'
 alias df='df -h'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
-alias ls='ls -asCF --color=auto'
-alias ll='ls -alF --color=auto'
+alias egrep='egrep —color=auto'
+alias fgrep='fgrep —color=auto'
+alias grep='grep —color=auto'
+alias ls='ls -asCF —color=auto'
+alias ll='ls -alF —color=auto'
 
 export PS1='[\[\e[1;31m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\]]\$ '
+
